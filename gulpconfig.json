@@ -1,18 +1,18 @@
 {
-  "browserSyncOptions" : {
+  "browserSyncOptions": {
     "proxy": "localhost/antoineperhirin/",
     "notify": false
   },
-  "browserSyncWatchFiles" : [
+  "browserSyncWatchFiles": [
     "./css/*.min.css",
     "./js/*.min.js",
     "./**/*.php"
   ],
-  "paths" : {
+  "paths": {
     "js": "./js",
     "css": "./css",
     "img": "./img",
-		"imgsrc": "./src/img",
+    "imgsrc": "./src/img",
     "sass": "./sass",
     "node": "./node_modules/",
     "bower": "./bower_components/",

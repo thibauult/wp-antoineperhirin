@@ -7,3 +7,4 @@ dist-product
 npm-debug.log
 /vendor/
 .idea/
+*.iml

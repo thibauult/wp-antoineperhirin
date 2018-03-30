@@ -32,7 +32,17 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="row">
+            <div class="col">
+                <img src="<?php echo get_template_directory_uri().'/images/antoine-large.png' ?>">
+            </div>
+            <div class="col">
+                <h1>Infographiste</h1>
+                <h2>Communication graphique et visuelle</h2>
+            </div>
+        </div>
+
+		<nav style="display: none;"  class="navbar navbar-expand-md navbar-dark bg-dark">
 
 		<?php if ( 'container' == $container ) : ?>
 			<div class="container" >
