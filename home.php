@@ -12,7 +12,7 @@ $posts = get_posts(array(
 <div id="home">
     <div id="carouselHome" class="carousel slide" data-ride="carousel">
         <div class="row">
-            <div class="col-8">
+            <div class="col-md-8 col-xs-12">
                 <div class="carousel-inner">
                     <?php $i = 0; foreach ( $posts as $post ) : setup_postdata( $post ); ?>
                         <div class="carousel-item <?php echo $i == 0 ? 'active' : '' ?>">
@@ -25,9 +25,9 @@ $posts = get_posts(array(
                     <?php endforeach; ?>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-md-4 col-xs-12">
 
-                <div class="row">
+                <div class="row mt-xs-2">
                     <div class="col">
                         <div class="post-description">
                             <h3><?php the_title() ?></h3>

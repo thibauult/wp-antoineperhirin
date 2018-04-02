@@ -1,5 +1,6 @@
 @import "theme_variables";
 @import "utils";
+@import "../assets/bootstrap4";
 
 body {
   font-family: "Helvetica Neue Thin", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -23,17 +24,25 @@ body {
 
   padding-top: 20px;
 
+  .logo-container {
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+
   img {
     max-width: 300px;
   }
 
   h1 {
-    font-size: 18pt;
+    font-size: 1.4rem;
     font-weight: bolder;
+    margin-bottom: 0;
   }
 
   h2 {
-    font-size: 18pt;
+    font-size: 1.4rem;
     font-weight: lighter;
   }
 }
@@ -45,6 +54,14 @@ body {
     float: right;
     display: block;
 
+    @include media-breakpoint-down(sm) {
+      float: left;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 0;
+      width: 100%;
+    }
+
     &>li {
       border: $border-default;
       height: $menu-item-size;
@@ -52,6 +69,13 @@ body {
       margin-bottom: 10px;
       display: block;
       cursor: pointer;
+      float: right;
+
+      @include media-breakpoint-down(sm) {
+        float: left;
+        display: inline-block;
+        margin-bottom: 0;
+      }
     }
 
     &>li:hover {
@@ -184,6 +208,10 @@ body {
     p {
       font-size: 0.8rem;
       font-weight: 200;
+    }
+
+    @include media-breakpoint-down(xs) {
+      margin-top: 10px;
     }
   }
 

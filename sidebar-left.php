@@ -13,15 +13,16 @@
 
         </li>
         <li class="envelope">
-            <a href="mailto:antoine.perhirin@orange.fr">
+            <a href="mailto:<?php echo $GLOBALS['cgv']['email'] ?>">
                 <div class="triangle"></div>
             </a>
         </li>
         <li class="phone">
-            <a href="tel:+33685505440">06</a>
+            <a href="tel:<?php echo $GLOBALS['cgv']['phone'] ?>">06</a>
         </li>
         <li class="facebook">
-            <a href="https://www.facebook.com/antoine.perhirin" target="_blank">f</a>
+            <a href="<?php echo $GLOBALS['cgv']['facebook'] ?>" target="_blank">f</a>
         </li>
     </ul>
+
 </div>

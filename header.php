@@ -12,6 +12,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+
+    <link rel="icon" type="image/icon" href="<?php echo get_template_directory_uri().'/images/favicon.ico' ?>">
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,12 +32,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 
     <div class="container" id="header" style="margin-bottom: 20px">
         <div class="row align-items-end">
-            <div class="col">
+            <div class="logo-container col-md-6 col-xs-12">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
                     <img src="<?php echo get_template_directory_uri().'/images/antoine-large.png' ?>">
                 </a>
             </div>
-            <div class="col text-right">
+            <div class="col-md-6 col-xs-12 text-right">
                 <h1>Infographiste</h1>
                 <h2>Communication graphique et visuelle</h2>
             </div>
@@ -46,8 +48,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
         <div class="row">
 
-            <div class="col-2">
+            <div class="col-md-2 col-xs-12">
                 <?php get_template_part( 'sidebar-left' ); ?>
             </div>
 
-            <div class="col-10">
+            <div class="col-md-10 col-xs-12">
