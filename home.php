@@ -3,8 +3,10 @@ get_header();
 
 global $post;
 
+$postPerPage = 5;
+
 $posts = get_posts(array(
-    'posts_per_page'   => 5,
+    'posts_per_page'   => $postPerPage,
     'category_name'    => 'realisations'
 ));
 ?>
@@ -46,40 +48,19 @@ $posts = get_posts(array(
                         <span class="sr-only">Next</span>
                     </a>
                     <ol>
-                        <li data-target="#carouselHome" data-slide-to="0" class="carousel-page carousel-page-0 active">1</li>
-                        <li data-target="#carouselHome" data-slide-to="1" class="carousel-page carousel-page-1">2</li>
-                        <li data-target="#carouselHome" data-slide-to="2" class="carousel-page carousel-page-2">3</li>
-                        <li data-target="#carouselHome" data-slide-to="3" class="carousel-page carousel-page-3">4</li>
-                        <li data-target="#carouselHome" data-slide-to="4" class="carousel-page carousel-page-4">5</li>
+                        <?php for($i = 0; $i < $postPerPage; $i++) : ?>
+                        <li data-target="#carouselHome"
+                            data-slide-to="<?php echo $i; ?>"
+                            class="carousel-page carousel-page-<?php echo $i; ?>">
+                            <?php echo $i + 1; ?>
+                        </li>
+                        <?php endfor; ?>
                     </ol>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<script type="text/javascript">
-
-    function updatePostDescription(id) {
-        var h5 = jQuery('#carouselHome .caption-' + id + ' h5').text();
-        var excerpt = jQuery('#carouselHome .caption-' + id + ' p:first').text();
-        var href = jQuery('#carouselHome .caption-' + id + ' a').attr('href');
-
-        jQuery('#carouselHome .post-description h3').text(h5);
-        jQuery('#carouselHome .post-description p:first').text(excerpt + '...');
-        jQuery('#carouselHome .post-description a').attr('href', href);
-
-        jQuery('#carouselHome .carousel-controls .carousel-page').removeClass('active');
-        jQuery('#carouselHome .carousel-controls .carousel-page-' + id).addClass('active');
-    }
-
-    jQuery('#carouselHome').on('slide.bs.carousel', function (event) {
-        updatePostDescription(event.to);
-    });
-
-    updatePostDescription(0);
-
-</script>
 
 <?php
 wp_reset_postdata();

@@ -14203,7 +14203,7 @@ body {
   #main .the-breadcrumb {
     font-size: 12pt;
     font-weight: lighter;
-    margin-bottom: 20px; }
+    margin-bottom: 10px; }
     #main .the-breadcrumb .current-item {
       font-weight: normal; }
     #main .the-breadcrumb > a {

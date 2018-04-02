@@ -180,13 +180,9 @@ gulp.task( 'watch-bs', ['browser-sync', 'watch', 'scripts'], function() {
 // Uglifies and concat all JS files into one
 gulp.task( 'scripts', function() {
     var scripts = [
-
-        // Start - All BS4 stuff
         paths.dev + '/js/bootstrap4/bootstrap.js',
-
-        // End - All BS4 stuff
-
-        paths.dev + '/js/skip-link-focus-fix.js'
+        paths.dev + '/js/skip-link-focus-fix.js',
+        paths.js + '/toun.js'
     ];
   gulp.src( scripts )
     .pipe( concat( 'theme.min.js' ) )
