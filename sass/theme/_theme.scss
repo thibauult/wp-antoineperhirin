@@ -1,1 +1,360 @@
-// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+@import "theme_variables";
+@import "utils";
+
+body {
+  font-family: "Helvetica Neue Thin", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 12pt;
+}
+
+.my-button {
+  text-decoration: none;
+  border: $border-default;
+  background: white;
+  text-align: center;
+
+  &:hover {
+    background: black;
+    color: white;
+  }
+}
+
+#header {
+
+  padding-top: 20px;
+
+  img {
+    max-width: 300px;
+  }
+
+  h1 {
+    font-size: 18pt;
+    font-weight: bolder;
+  }
+
+  h2 {
+    font-size: 18pt;
+    font-weight: lighter;
+  }
+}
+
+#menu-left {
+
+  ul.root {
+    list-style: none;
+    float: right;
+    display: block;
+
+    &>li {
+      border: $border-default;
+      height: $menu-item-size;
+      width: $menu-item-size;
+      margin-bottom: 10px;
+      display: block;
+      cursor: pointer;
+    }
+
+    &>li:hover {
+      background: black;
+    }
+
+    .burger {
+      span {
+        display: block;
+        width: $menu-item-size/2;
+        height: 1px;
+        margin-top: $menu-item-size/4;
+        margin-left: $menu-item-size * .25;
+        position: relative;
+        background: black;
+      }
+
+      &:hover {
+        ul {
+          display: block!important;
+        }
+      }
+
+      ul {
+        top: 0;
+        display: none;
+        margin-left: $menu-item-size - 2px;
+        z-index: 9999;
+        position: absolute;
+        list-style: none;
+        border: $border-default;
+        background: white;
+        padding: 0;
+
+        li {
+          padding: 5px 20px;
+          display: block;
+
+          a {
+            font-weight: 200;
+            font-size: 0.9rem;
+          }
+
+          &:hover {
+
+            background: black;
+
+            a {
+              color: white;
+              background: black;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      &:hover > span {
+        background: white;
+      }
+    }
+
+    .envelope {
+      span {
+        display: block;
+        height: 1px;
+        position: relative;
+        background: black;
+        width: $menu-item-size/2;
+      }
+
+      .triangle {
+        position: relative;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: -22px;
+        width: $menu-item-size/sqrt(2);
+        height: $menu-item-size/sqrt(2);
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        border-right: $border-default;
+        border-bottom: $border-default;
+      }
+
+      &:hover {
+        .triangle {
+          border-right: $border-white;
+          border-bottom: $border-white;
+        }
+      }
+    }
+
+    .phone, .facebook {
+      text-align: center;
+      line-height: $menu-item-size;
+      font-size: 2.5rem;
+      font-weight: lighter;
+
+      a {
+        text-decoration: none;
+      }
+
+      &:hover {
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+#home {
+
+  img {
+    border: $border-default;
+  }
+
+  .post-description {
+    border: $border-default;
+    padding: 10px;
+    margin-bottom: 20px;
+
+    h3 {
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+      font-weight: 200;
+    }
+  }
+
+  .understrap-read-more-link {
+    border: $border-default;
+    padding: 3px 6px;
+    right: 0;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: normal;
+
+    &:hover {
+      color: white;
+      background: black;
+    }
+  }
+
+  .carousel-controls {
+
+    display: inline-block;
+    width: 100%;
+    height: auto;
+
+    .carousel-control {
+      float: left;
+      border: $border-default;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 20pt;
+      text-align: center;
+      font-weight: lighter;
+      margin-right: 10px;
+
+      &:hover {
+        color: white;
+        background: black;
+      }
+    }
+
+    ol {
+
+      display: block;
+      position: relative;
+      float: right;
+
+      li {
+        display: inline-block;
+        list-style-type: none;
+        cursor: pointer;
+        padding: 0 5px;
+        font-weight: lighter;
+
+        &.active {
+          border-bottom: $border-default;
+        }
+
+        &:hover {
+          font-weight: normal;
+        }
+      }
+    }
+  }
+}
+
+#main {
+
+  border: $border-default;
+  padding: 20px 30px;
+
+  font-size: 14pt;
+  font-weight: 200;
+
+  h1 {
+    font-size: 36pt;
+  }
+
+  h2 {
+    font-size: 18pt;
+  }
+
+  .the-breadcrumb {
+
+    font-size: 12pt;
+    font-weight: lighter;
+    margin-bottom: 20px;
+
+    .current-item {
+      font-weight: normal;
+    }
+
+    & > a {
+      @extend .my-button;
+      float: right;
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      margin-left: 10px;
+    }
+  }
+
+  &.category {
+
+    .row {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display:         flex;
+      flex-wrap: wrap;
+      margin: 0;
+    }
+    .row > [class*='col-'] {
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      padding: 0;
+      width: 200px;
+      height: 200px;
+    }
+
+    .category-item {
+      border: $border-default;
+      position: relative;
+      text-align: center;
+      background: black;
+      height: 100%;
+      //color: white;
+
+      img {
+        height: auto;
+      }
+
+      h2 {
+        font-size: 1rem;
+        position: absolute;
+        z-index: 9999;
+        width: 100%;
+        top: 40%;
+        //height: 100%;
+        vertical-align: middle;
+        margin: 0;
+        //display: none;
+      }
+
+      a {
+        @extend .my-button;
+        position: absolute;
+        width: 15px;
+        //height: 15px;
+        line-height: 16px;
+        font-size: 0.8rem;
+        z-index: 9999;
+        bottom: 5px;
+        right: 5px;
+      }
+
+      &:hover {
+
+        img {
+          -webkit-filter: opacity(0%);
+          filter: opacity(0%);
+        }
+
+        h2 {
+          display: inherit;
+          color: white;
+        }
+      }
+    }
+  }
+}

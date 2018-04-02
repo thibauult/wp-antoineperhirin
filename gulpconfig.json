@@ -1,6 +1,6 @@
 {
   "browserSyncOptions": {
-    "proxy": "localhost/antoineperhirin/",
+    "proxy": "localhost:8888/antoineperhirin/",
     "notify": false
   },
   "browserSyncWatchFiles": [

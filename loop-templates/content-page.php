@@ -6,6 +6,7 @@
  */
 
 ?>
+
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
@@ -31,7 +32,7 @@
 
 	<footer class="entry-footer">
 
-		<?php edit_post_link( __( 'Edit', 'understrap' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php //edit_post_link( __( 'Edit', 'understrap' ), '<span class="edit-link">', '</span>' ); ?>
 
 	</footer><!-- .entry-footer -->
 

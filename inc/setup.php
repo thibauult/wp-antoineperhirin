@@ -118,8 +118,43 @@ if ( ! function_exists( 'understrap_all_excerpts_get_more_link' ) ) {
 	 */
 	function understrap_all_excerpts_get_more_link( $post_excerpt ) {
 
-		return $post_excerpt . ' [...]<p><a class="btn btn-secondary understrap-read-more-link" href="' . esc_url( get_permalink( get_the_ID() )) . '">' . __( 'Read More...',
-		'understrap' ) . '</a></p>';
+		return $post_excerpt . '<p class="text-right">
+            <a class="understrap-read-more-link" href="' . esc_url( get_permalink( get_the_ID() )) . '">+</a>
+        </p>';
 	}
 }
 add_filter( 'wp_trim_excerpt', 'understrap_all_excerpts_get_more_link' );
+
+//Adding the Open Graph in the Language Attributes
+function add_opengraph_doctype( $output ) {
+    return $output . ' xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"';
+}
+add_filter('language_attributes', 'add_opengraph_doctype');
+
+//Lets add Open Graph Meta Info
+
+function insert_fb_in_head() {
+    global $post;
+    if ( !is_singular()) //if it is not a post or a page
+        return;
+    //echo '<meta property="fb:admins" content="YOUR USER ID"/>';
+    echo '<meta property="og:title" content="' . get_the_title() . '"/>';
+    echo '<meta property="og:type" content="article"/>';
+    echo '<meta property="og:url" content="' . get_permalink() . '"/>';
+    echo '<meta property="og:site_name" content="Antoine Perhirin"/>';
+
+    if(!has_post_thumbnail( $post->ID )) {
+        $default_image = get_template_directory_uri().'/images/antoine-large.png';
+        echo '<meta property="og:image" content="' . $default_image . '"/>';
+    }
+    else{
+        $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+        echo '<meta property="og:image" content="' . esc_attr( $thumbnail_src[0] ) . '"/>';
+    }
+    echo "";
+}
+add_action( 'wp_head', 'insert_fb_in_head', 5 );
+
+if ( function_exists( 'add_theme_support' ) ) {
+    add_image_size( 'category-thumb', 99999, 200, true );
+}

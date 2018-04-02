@@ -1,23 +1,27 @@
-<?php
-/**
- * The sidebar containing the main widget area.
- *
- * @package understrap
- */
+<div id="menu-left">
+    <ul class="root">
+        <li class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
 
-if ( ! is_active_sidebar( 'left-sidebar' ) ) {
-	return;
-}
+            <?php wp_nav_menu(array(
+                'menu_id' => 'contextual-menu',
+                'container' => '',
+                'menu_class' => ''
+            )); ?>
 
-// when both sidebars turned on reduce col size to 3 from 4.
-$sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
-?>
-
-<?php if ( 'both' === $sidebar_pos ) : ?>
-<div class="col-md-3 widget-area" id="left-sidebar" role="complementary">
-	<?php else : ?>
-<div class="col-md-4 widget-area" id="left-sidebar" role="complementary">
-	<?php endif; ?>
-<?php dynamic_sidebar( 'left-sidebar' ); ?>
-
-</div><!-- #secondary -->
+        </li>
+        <li class="envelope">
+            <a href="mailto:antoine.perhirin@orange.fr">
+                <div class="triangle"></div>
+            </a>
+        </li>
+        <li class="phone">
+            <a href="tel:+33685505440">06</a>
+        </li>
+        <li class="facebook">
+            <a href="https://www.facebook.com/antoine.perhirin" target="_blank">f</a>
+        </li>
+    </ul>
+</div>
