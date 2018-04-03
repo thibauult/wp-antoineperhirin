@@ -40,11 +40,11 @@ $posts = get_posts(array(
 
                 <div class="carousel-controls">
                     <a class="carousel-control" href="#carouselHome" role="button" data-slide="prev">
-                        <span aria-hidden="true"><</span>
+                        <span aria-hidden="true">&lt;</span>
                         <span class="sr-only">Prev</span>
                     </a>
                     <a class="carousel-control" href="#carouselHome" role="button" data-slide="next">
-                        <span aria-hidden="true">></span>
+                        <span aria-hidden="true">&gt;</span>
                         <span class="sr-only">Next</span>
                     </a>
                     <ol>

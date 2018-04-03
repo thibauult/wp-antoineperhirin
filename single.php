@@ -4,8 +4,8 @@
 
     <div class="the-breadcrumb">
         <?php if(function_exists('bcn_display')) bcn_display(); ?>
-        <?php previous_post_link('%link', '>', true); ?>
-        <?php next_post_link('%link', '<', true); ?>
+        <?php previous_post_link('%link', '&gt;', true); ?>
+        <?php next_post_link('%link', '&lt;', true); ?>
         <a href="https://www.facebook.com/sharer.php" target="_blank">f</a>
     </div>
 
