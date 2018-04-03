@@ -154,7 +154,3 @@ function insert_fb_in_head() {
     echo "";
 }
 add_action( 'wp_head', 'insert_fb_in_head', 5 );
-
-if ( function_exists( 'add_theme_support' ) ) {
-    add_image_size( 'category-thumb', 99999, 200, true );
-}

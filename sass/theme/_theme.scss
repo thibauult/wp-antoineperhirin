@@ -42,7 +42,7 @@ body {
   }
 
   h2 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: lighter;
   }
 }
@@ -318,21 +318,11 @@ body {
 
   &.category {
 
-    .row {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display:         flex;
-      flex-wrap: wrap;
-      margin: 0;
-    }
-    .row > [class*='col-'] {
+    .cat-row {
+
       display: flex;
-      flex-direction: column;
-      margin: auto;
-      padding: 0;
-      width: 200px;
-      height: 200px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .category-item {
@@ -340,8 +330,9 @@ body {
       position: relative;
       text-align: center;
       background: black;
-      height: 100%;
-      //color: white;
+      max-width: 220px;
+      margin: 20px;
+      cursor: default;
 
       img {
         height: auto;
@@ -352,18 +343,16 @@ body {
         position: absolute;
         z-index: 9999;
         width: 100%;
-        top: 40%;
-        //height: 100%;
+        top: 45%;
         vertical-align: middle;
-        margin: 0;
-        //display: none;
+        display: none;
+        padding: 5px;
       }
 
       a {
         @extend .my-button;
         position: absolute;
         width: 15px;
-        //height: 15px;
         line-height: 16px;
         font-size: 0.8rem;
         z-index: 9999;
@@ -374,8 +363,8 @@ body {
       &:hover {
 
         img {
+                  filter: opacity(0%);
           -webkit-filter: opacity(0%);
-          filter: opacity(0%);
         }
 
         h2 {

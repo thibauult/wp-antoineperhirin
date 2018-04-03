@@ -12,9 +12,15 @@
 
     <?php $the_query = new WP_Query( array('posts_per_page' => 9) ); ?>
 
-    <div class="row">
+    <div class="cat-row">
     <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-        <?php get_template_part( 'loop-templates/content', 'category' ); ?>
+
+        <div class="category-item">
+		    <?php the_post_thumbnail( 'small' );	 ?>
+            <h2><?php the_title() ?></h2>
+            <a href="<?php the_permalink() ?>">+</a>
+        </div>
+
     <?php endwhile; ?>
     </div>
     <?php wp_reset_postdata(); ?>
