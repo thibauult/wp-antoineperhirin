@@ -21,7 +21,8 @@ $container = get_theme_mod( 'understrap_container_type' );
     <meta name="robots" content="index,follow">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?>">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
+    <meta name="description" content="<?php bloginfo( 'description' ); ?>">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php wp_head(); ?>
 </head>
@@ -34,7 +35,8 @@ $container = get_theme_mod( 'understrap_container_type' );
         <div class="row align-items-end">
             <div class="logo-container col-md-6 col-xs-12">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                    <img src="<?php echo get_template_directory_uri().'/images/antoine-large.png' ?>">
+                    <img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo get_template_directory_uri().'/images/antoine-large.png' ?>">
+                    <span class="d-none" aria-hidden="true"><?php bloginfo( 'name' ); ?></span>
                 </a>
             </div>
             <div class="col-md-6 col-xs-12 text-right">
