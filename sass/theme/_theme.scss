@@ -2,10 +2,22 @@
 @import "utils";
 @import "../assets/bootstrap4";
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800');
+
 body {
-  font-family: "Helvetica Neue Thin", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: 12pt;
+  font-size: 14pt;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 36pt;
+}
+
+strong {
+  font-weight: 800;
+  font-size: 18pt;
 }
 
 .my-button {
@@ -36,13 +48,13 @@ body {
   }
 
   h1 {
-    font-size: 1.4rem;
-    font-weight: bolder;
+    font-size: 18pt;
+    font-weight: 800;
     margin-bottom: 0;
   }
 
   h2 {
-    font-size: 1.2rem;
+    font-size: 18pt;
     font-weight: lighter;
   }
 }
@@ -175,7 +187,7 @@ body {
       text-align: center;
       line-height: $menu-item-size;
       font-size: 2.5rem;
-      font-weight: lighter;
+      font-weight: lighter!important;
 
       a {
         text-decoration: none;
@@ -217,11 +229,14 @@ body {
 
   .understrap-read-more-link {
     border: $border-default;
-    padding: 3px 6px;
-    right: 0;
+    display: block;
+    text-align: center;
+    width: 20px;
+    height: 20px;
     text-decoration: none;
     cursor: pointer;
     font-weight: normal;
+    margin-left: auto;
 
     &:hover {
       color: white;
@@ -238,9 +253,9 @@ body {
     .carousel-control {
       float: left;
       border: $border-default;
-      width: 32px;
-      height: 32px;
-      line-height: 32px;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
       cursor: pointer;
       text-decoration: none;
       font-size: 20pt;
@@ -259,6 +274,7 @@ body {
       display: block;
       position: relative;
       float: right;
+      padding-left: 0;
 
       li {
         display: inline-block;
@@ -332,7 +348,6 @@ body {
       background: black;
       max-width: 220px;
       margin: 20px;
-      cursor: default;
 
       img {
         height: auto;
@@ -349,15 +364,15 @@ body {
         padding: 5px;
       }
 
-      a {
+      .plus-button {
         @extend .my-button;
         position: absolute;
-        width: 15px;
-        line-height: 16px;
+        width: 20px;
+        height: 20px;
         font-size: 0.8rem;
         z-index: 9999;
-        bottom: 5px;
-        right: 5px;
+        bottom: 10px;
+        right: 10px;
       }
 
       &:hover {
@@ -370,6 +385,36 @@ body {
         h2 {
           display: inherit;
           color: white;
+        }
+      }
+    }
+
+    footer {
+      h2, a.next, a.prev {
+        display: none;
+      }
+
+      .pagination {
+        display: flex;
+        justify-content: center;
+      }
+
+      a.link {
+        @extend .my-button;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        display: block;
+        font-size: 20pt;
+      }
+
+      .page-numbers {
+
+        font-size: 0.9rem;
+        padding: 0 5px;
+
+        &.current {
+          border-bottom: $border-default;
         }
       }
     }

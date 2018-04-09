@@ -29,29 +29,25 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <body <?php body_class(); ?>>
 
-<div class="hfeed site" id="page">
+<div id="page" class="container">
 
-    <div class="container" id="header" style="margin-bottom: 20px">
-        <div class="row align-items-end">
-            <div class="logo-container col-md-6 col-xs-12">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                    <img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo get_template_directory_uri().'/images/antoine-large.png' ?>">
-                    <span class="d-none" aria-hidden="true"><?php bloginfo( 'name' ); ?></span>
-                </a>
-            </div>
-            <div class="col-md-6 col-xs-12 text-right">
-                <h1>Infographiste</h1>
-                <h2>Communication graphique et visuelle</h2>
-            </div>
+    <div id="header" class="row align-items-end" style="margin-bottom: 20px">
+        <div class="logo-container col-md-6 col-xs-12">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <img alt="<?php bloginfo( 'name' ); ?>" src="<?php echo get_template_directory_uri().'/images/antoine-large.png' ?>">
+                <span class="d-none" aria-hidden="true"><?php bloginfo( 'name' ); ?></span>
+            </a>
+        </div>
+        <div class="col-md-6 col-xs-12 text-right">
+            <h1>Infographiste</h1>
+            <h2>Communication graphique et visuelle</h2>
         </div>
     </div>
 
-    <div class="container">
+    <div id = "menu-left" class="row">
 
-        <div class="row">
+        <div class="col-md-2 col-xs-12">
+            <?php get_template_part( 'sidebar-left' ); ?>
+        </div>
 
-            <div class="col-md-2 col-xs-12">
-                <?php get_template_part( 'sidebar-left' ); ?>
-            </div>
-
-            <div class="col-md-10 col-xs-12">
+        <div class="col-md-10 col-xs-12">

@@ -13,6 +13,13 @@
 
         <?php get_template_part( 'loop-templates/content', 'single' ); ?>
 
+        <div class="row">
+            <div class="col">
+
+                <?php get_template_part( 'comments' ); ?>
+            </div>
+        </div>
+
     <?php endwhile; ?>
 
 </main>

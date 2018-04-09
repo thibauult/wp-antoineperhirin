@@ -10,19 +10,41 @@
 
     <h1>R&eacute;alisations</h1>
 
-    <?php $the_query = new WP_Query( array('posts_per_page' => 9) ); ?>
+    <?php
+
+    $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+    $wp_query = new WP_Query(array(
+        'paged' => $paged,
+        'posts_per_page' => 9
+    ));
+
+    ?>
 
     <div class="cat-row">
-    <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+    <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 
-        <div class="category-item">
-		    <?php the_post_thumbnail( 'small' );	 ?>
+        <a href="<?php the_permalink() ?>" class="category-item">
+            <?php the_post_thumbnail( 'small' );	 ?>
             <h2><?php the_title() ?></h2>
-            <a href="<?php the_permalink() ?>">+</a>
-        </div>
+            <span class="plus-button">+</span>
+        </a>
 
     <?php endwhile; ?>
     </div>
+
+    <footer class="row">
+        <div class="col-1 col-xs-1">
+            <a class="link" href="<?php echo get_previous_posts_page_link() ?>">&lt;</a>
+        </div>
+        <div class="col-10 col-xs-1">
+            <?php the_posts_pagination( array( 'mid_size'  => 2 ) ); ?>
+        </div>
+        <div class="col-1 col-xs-1">
+            <a class="link" href="<?php echo get_next_posts_page_link() ?>">&gt;</a>
+        </div>
+
+    </footer>
+
     <?php wp_reset_postdata(); ?>
 
 </main>

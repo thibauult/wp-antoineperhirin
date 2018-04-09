@@ -4,6 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -14003,16 +14004,24 @@ a.text-dark:hover, a.text-dark:focus {
     border: 1px solid #ddd !important; } }
 
 body {
-  font-family: "Helvetica Neue Thin", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: 12pt; }
+  font-size: 14pt; }
 
-.my-button, #main .the-breadcrumb > a, #main.category .category-item a {
+h1 {
+  font-weight: 800;
+  font-size: 36pt; }
+
+strong {
+  font-weight: 800;
+  font-size: 18pt; }
+
+.my-button, #main .the-breadcrumb > a, #main.category .category-item .plus-button, #main.category footer a.link {
   text-decoration: none;
   border: 1px solid black;
   background: white;
   text-align: center; }
-  .my-button:hover, #main .the-breadcrumb > a:hover, #main.category .category-item a:hover {
+  .my-button:hover, #main .the-breadcrumb > a:hover, #main.category .category-item .plus-button:hover, #main.category footer a.link:hover {
     background: black;
     color: white; }
 
@@ -14025,11 +14034,11 @@ body {
   #header img {
     max-width: 300px; }
   #header h1 {
-    font-size: 1.4rem;
-    font-weight: bolder;
+    font-size: 18pt;
+    font-weight: 800;
     margin-bottom: 0; }
   #header h2 {
-    font-size: 1.2rem;
+    font-size: 18pt;
     font-weight: lighter; }
 
 #menu-left ul.root {
@@ -14124,7 +14133,7 @@ body {
     text-align: center;
     line-height: 64px;
     font-size: 2.5rem;
-    font-weight: lighter; }
+    font-weight: lighter !important; }
     #menu-left ul.root .phone a, #menu-left ul.root .facebook a {
       text-decoration: none; }
     #menu-left ul.root .phone:hover a, #menu-left ul.root .facebook:hover a {
@@ -14148,11 +14157,14 @@ body {
 
 #home .understrap-read-more-link {
   border: 1px solid black;
-  padding: 3px 6px;
-  right: 0;
+  display: block;
+  text-align: center;
+  width: 20px;
+  height: 20px;
   text-decoration: none;
   cursor: pointer;
-  font-weight: normal; }
+  font-weight: normal;
+  margin-left: auto; }
   #home .understrap-read-more-link:hover {
     color: white;
     background: black; }
@@ -14164,9 +14176,9 @@ body {
   #home .carousel-controls .carousel-control {
     float: left;
     border: 1px solid black;
-    width: 32px;
-    height: 32px;
-    line-height: 32px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
     cursor: pointer;
     text-decoration: none;
     font-size: 20pt;
@@ -14179,7 +14191,8 @@ body {
   #home .carousel-controls ol {
     display: block;
     position: relative;
-    float: right; }
+    float: right;
+    padding-left: 0; }
     #home .carousel-controls ol li {
       display: inline-block;
       list-style-type: none;
@@ -14228,8 +14241,7 @@ body {
     text-align: center;
     background: black;
     max-width: 220px;
-    margin: 20px;
-    cursor: default; }
+    margin: 20px; }
     #main.category .category-item img {
       height: auto; }
     #main.category .category-item h2 {
@@ -14241,17 +14253,37 @@ body {
       vertical-align: middle;
       display: none;
       padding: 5px; }
-    #main.category .category-item a {
+    #main.category .category-item .plus-button {
       position: absolute;
-      width: 15px;
-      line-height: 16px;
+      width: 20px;
+      height: 20px;
       font-size: 0.8rem;
       z-index: 9999;
-      bottom: 5px;
-      right: 5px; }
+      bottom: 10px;
+      right: 10px; }
     #main.category .category-item:hover img {
       filter: opacity(0%);
       -webkit-filter: opacity(0%); }
     #main.category .category-item:hover h2 {
       display: inherit;
       color: white; }
+  #main.category footer h2, #main.category footer a.next, #main.category footer a.prev {
+    display: none; }
+  #main.category footer .pagination {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  #main.category footer a.link {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    font-size: 20pt; }
+  #main.category footer .page-numbers {
+    font-size: 0.9rem;
+    padding: 0 5px; }
+    #main.category footer .page-numbers.current {
+      border-bottom: 1px solid black; }
