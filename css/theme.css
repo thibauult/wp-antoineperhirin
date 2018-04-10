@@ -14006,15 +14006,19 @@ a.text-dark:hover, a.text-dark:focus {
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: 14pt; }
+  font-size: 12pt; }
 
 h1 {
   font-weight: 800;
   font-size: 36pt; }
 
+h2 {
+  font-weight: 600;
+  font-size: 18pt; }
+
 strong {
   font-weight: 800;
-  font-size: 18pt; }
+  font-size: 12pt; }
 
 .my-button, #main .the-breadcrumb > a, #main.category .category-item .plus-button, #main.category footer a.link {
   text-decoration: none;
@@ -14147,10 +14151,16 @@ strong {
   padding: 10px;
   margin-bottom: 20px; }
   #home .post-description h3 {
-    font-size: 1.1rem; }
+    font-size: 18pt;
+    font-weight: bold;
+    text-align: left; }
   #home .post-description p {
-    font-size: 0.8rem;
-    font-weight: 200; }
+    font-size: 12pt;
+    font-weight: normal;
+    text-align: left; }
+  #home .post-description footer {
+    height: 20px;
+    margin-bottom: 0; }
   @media (max-width: 575.98px) {
     #home .post-description {
       margin-top: 10px; } }
@@ -14161,10 +14171,12 @@ strong {
   text-align: center;
   width: 20px;
   height: 20px;
+  line-height: 20px;
   text-decoration: none;
   cursor: pointer;
   font-weight: normal;
-  margin-left: auto; }
+  margin-left: auto;
+  bottom: 0; }
   #home .understrap-read-more-link:hover {
     color: white;
     background: black; }
@@ -14218,7 +14230,7 @@ strong {
     font-weight: lighter;
     margin-bottom: 10px; }
     #main .the-breadcrumb .current-item {
-      font-weight: normal; }
+      font-weight: bold; }
     #main .the-breadcrumb > a {
       float: right;
       display: inline-block;

@@ -6,12 +6,12 @@
 
     function updatePostDescription(id) {
         var h5 = $('#carouselHome .caption-' + id + ' h5').text();
-        var excerpt = $('#carouselHome .caption-' + id + ' p:first').text();
-        var href = $('#carouselHome .caption-' + id + ' a').attr('href');
+        var article = $('#carouselHome .caption-' + id + ' article').clone();
+        var footer = $('#carouselHome .caption-' + id + ' footer').clone();
 
         $('#carouselHome .post-description h3').text(h5);
-        $('#carouselHome .post-description p:first').text(excerpt + '...');
-        $('#carouselHome .post-description a').attr('href', href);
+        $('#carouselHome .post-description article').replaceWith(article);
+        $('#carouselHome .post-description footer').replaceWith(footer);
 
         $('#carouselHome .carousel-controls .carousel-page').removeClass('active');
         $('#carouselHome .carousel-controls .carousel-page-' + id).addClass('active');

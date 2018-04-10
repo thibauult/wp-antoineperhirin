@@ -12,7 +12,7 @@ $posts = get_posts(array(
 ?>
 
 <div id="home">
-    <div id="carouselHome" class="carousel slide" data-ride="carousel">
+    <div id="carouselHome" class="carousel slide" data-ride="carousel" data-interval="5000">
         <div class="row">
             <div class="col-md-8 col-xs-12">
                 <div class="carousel-inner">
@@ -32,8 +32,9 @@ $posts = get_posts(array(
                 <div class="row mt-xs-2">
                     <div class="col">
                         <div class="post-description">
-                            <h3><?php the_title() ?></h3>
-                            <?php the_excerpt() ?>
+                            <h3></h3>
+	                        <article></article>
+                            <footer></footer>
                         </div>
                     </div>
                 </div>

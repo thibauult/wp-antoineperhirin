@@ -3,7 +3,8 @@ bower_components
 node_modules
 understrap.zip
 dist
-antoineperhirin-1.3.0
+dist-product/
+antoineperhirin*
 npm-debug.log
 /vendor/
 .idea/

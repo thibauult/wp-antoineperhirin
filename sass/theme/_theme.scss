@@ -7,7 +7,7 @@
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  font-size: 14pt;
+  font-size: 12pt;
 }
 
 h1 {
@@ -15,9 +15,14 @@ h1 {
   font-size: 36pt;
 }
 
+h2 {
+  font-weight: 600;
+  font-size: 18pt;
+}
+
 strong {
   font-weight: 800;
-  font-size: 18pt;
+  font-size: 12pt;
 }
 
 .my-button {
@@ -214,12 +219,20 @@ strong {
     margin-bottom: 20px;
 
     h3 {
-      font-size: 1.1rem;
+      font-size: 18pt;
+      font-weight: bold;
+      text-align: left;
     }
 
     p {
-      font-size: 0.8rem;
-      font-weight: 200;
+      font-size: 12pt;
+      font-weight: normal;
+      text-align: left;
+    }
+
+    footer {
+      height: 20px;
+      margin-bottom: 0;
     }
 
     @include media-breakpoint-down(xs) {
@@ -233,10 +246,12 @@ strong {
     text-align: center;
     width: 20px;
     height: 20px;
+    line-height: 20px;
     text-decoration: none;
     cursor: pointer;
     font-weight: normal;
     margin-left: auto;
+    bottom: 0;
 
     &:hover {
       color: white;
@@ -318,7 +333,7 @@ strong {
     margin-bottom: 10px;
 
     .current-item {
-      font-weight: normal;
+      font-weight: bold;
     }
 
     & > a {

@@ -117,10 +117,13 @@ if ( ! function_exists( 'understrap_all_excerpts_get_more_link' ) ) {
 	 * @return string
 	 */
 	function understrap_all_excerpts_get_more_link( $post_excerpt ) {
-
-		return $post_excerpt . '<p class="text-right">
+		return
+		'<article>'
+			. $post_excerpt . '
+		</article>
+		<footer class="text-right">
             <a class="understrap-read-more-link" href="' . esc_url( get_permalink( get_the_ID() )) . '">+</a>
-        </p>';
+        </footer>';
 	}
 }
 add_filter( 'wp_trim_excerpt', 'understrap_all_excerpts_get_more_link' );
