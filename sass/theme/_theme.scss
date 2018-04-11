@@ -2,7 +2,7 @@
 @import "utils";
 @import "../assets/bootstrap4";
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800');
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -21,8 +21,7 @@ h2 {
 }
 
 strong {
-  font-weight: 800;
-  font-size: 12pt;
+  font-weight: 600;
 }
 
 .my-button {

@@ -94,39 +94,16 @@ if ( ! function_exists( 'understrap_setup' ) ) :
 endif; // understrap_setup.
 add_action( 'after_setup_theme', 'understrap_setup' );
 
-if ( ! function_exists( 'understrap_custom_excerpt_more' ) ) {
-	/**
-	 * Removes the ... from the excerpt read more link
-	 *
-	 * @param string $more The excerpt.
-	 *
-	 * @return string
-	 */
-	function understrap_custom_excerpt_more( $more ) {
-		return '';
-	}
+/**
+ * Filter the except length to 30 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function wpdocs_custom_excerpt_length( $length ) {
+	return 30;
 }
-add_filter( 'excerpt_more', 'understrap_custom_excerpt_more' );
-
-if ( ! function_exists( 'understrap_all_excerpts_get_more_link' ) ) {
-	/**
-	 * Adds a custom read more link to all excerpts, manually or automatically generated
-	 *
-	 * @param string $post_excerpt Posts's excerpt.
-	 *
-	 * @return string
-	 */
-	function understrap_all_excerpts_get_more_link( $post_excerpt ) {
-		return
-		'<article>'
-			. $post_excerpt . '
-		</article>
-		<footer class="text-right">
-            <a class="understrap-read-more-link" href="' . esc_url( get_permalink( get_the_ID() )) . '">+</a>
-        </footer>';
-	}
-}
-add_filter( 'wp_trim_excerpt', 'understrap_all_excerpts_get_more_link' );
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
 //Adding the Open Graph in the Language Attributes
 function add_opengraph_doctype( $output ) {
@@ -145,6 +122,14 @@ function insert_fb_in_head() {
     echo '<meta property="og:type" content="article"/>';
     echo '<meta property="og:url" content="' . get_permalink() . '"/>';
     echo '<meta property="og:site_name" content="Antoine Perhirin"/>';
+
+    echo $post->post_excerpt;
+
+    if(has_excerpt( $post->ID )) {
+	    echo '<meta property="og:description" content="'. get_the_excerpt() .'"/>';
+    } else {
+	    echo '<meta property="og:description" content="Pas de contenu"/>';
+    }
 
     if(!has_post_thumbnail( $post->ID )) {
         $default_image = get_template_directory_uri().'/images/antoine-large.png';

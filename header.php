@@ -1,14 +1,3 @@
-<?php
-/**
- * The header for our theme.
- *
- * Displays all of the <head> section and everything up till <div id="content">
- *
- * @package understrap
- */
-
-$container = get_theme_mod( 'understrap_container_type' );
-?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

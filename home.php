@@ -21,7 +21,12 @@ $posts = get_posts(array(
                             <?php the_post_thumbnail('full', ['class' => 'd-block w-100']); ?>
                             <div class="<?php echo 'caption-'.$i++ ?> d-none">
                                 <h5><?php the_title() ?></h5>
-                                <?php the_excerpt() ?>
+                                <article>
+	                                <?php the_excerpt() ?>
+                                </article>
+                                <footer>
+                                    <a class="understrap-read-more-link" href="<?php esc_url( the_permalink() ) ?>">+</a>
+                                </footer>
                             </div>
                         </div>
                     <?php endforeach; ?>
