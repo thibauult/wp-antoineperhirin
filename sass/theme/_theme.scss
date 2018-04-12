@@ -338,20 +338,12 @@ strong {
 
   &.category {
 
-    .cat-row {
-
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
     .category-item {
+
       border: $border-default;
       position: relative;
       text-align: center;
       background: black;
-      max-width: 220px;
-      margin: 20px;
 
       img {
         height: auto;
@@ -363,9 +355,7 @@ strong {
         z-index: 9999;
         width: 100%;
         top: 45%;
-        vertical-align: middle;
         display: none;
-        padding: 5px;
       }
 
       .plus-button {
@@ -387,7 +377,7 @@ strong {
         }
 
         h2 {
-          display: inherit;
+          display: block;
           color: white;
         }
       }

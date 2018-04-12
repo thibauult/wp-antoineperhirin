@@ -12,7 +12,7 @@
 
     </li>
     <li class="envelope">
-        <a href="mailto:<?php echo $GLOBALS['cgv']['email'] ?>" aria-label="<?php echo $GLOBALS['cgv']['email'] ?>">
+        <a href="<?php echo get_page_link( get_page_by_title( 'contact' )->ID ); ?>" aria-label="Page de Contact">
             <div aria-hidden="true" class="triangle"></div>
         </a>
     </li>

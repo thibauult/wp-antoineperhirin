@@ -20,14 +20,18 @@
 
     ?>
 
-    <div class="cat-row">
+    <div class="row">
     <?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
 
-        <a href="<?php the_permalink() ?>" class="category-item">
-            <?php the_post_thumbnail( 'small' );	 ?>
-            <h2><?php the_title() ?></h2>
-            <span class="plus-button">+</span>
-        </a>
+        <div class="col-md-4 col-sm-12 mb-4">
+            <div class="category-item">
+                <a href="<?php the_permalink() ?>" >
+                    <?php the_post_thumbnail( 'small' );	 ?>
+                    <h2><?php the_title() ?></h2>
+                    <span class="plus-button">+</span>
+                </a>
+            </div>
+        </div>
 
     <?php endwhile; ?>
     </div>
