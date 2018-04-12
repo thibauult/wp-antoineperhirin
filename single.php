@@ -8,7 +8,6 @@ get_header();
         <?php if(function_exists('bcn_display')) bcn_display(); ?>
         <?php previous_post_link('%link', '&gt;', true); ?>
         <?php next_post_link('%link', '&lt;', true); ?>
-        <a href="https://www.facebook.com/sharer.php" target="_blank">f</a>
     </div>
 
     <?php while ( have_posts() ) : the_post(); ?>

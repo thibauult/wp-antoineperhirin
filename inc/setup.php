@@ -128,7 +128,7 @@ function insert_fb_in_head() {
     if(has_excerpt( $post->ID )) {
 	    echo '<meta property="og:description" content="'. get_the_excerpt() .'"/>';
     } else {
-	    echo '<meta property="og:description" content="Pas de contenu"/>';
+	    echo '<meta property="og:description" content="' . wp_trim_words($post->post_content, 30, "...") .'"/>';
     }
 
     if(!has_post_thumbnail( $post->ID )) {
