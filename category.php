@@ -40,7 +40,7 @@
             <?php the_posts_pagination( array( 'mid_size'  => 2 ) ); ?>
         </div>
         <div class="col-1 col-xs-1">
-            <a class="link" href="<?php echo get_next_posts_page_link() ?>">&gt;</a>
+            <a class="link" style="float: right" href="<?php echo get_next_posts_page_link() ?>">&gt;</a>
         </div>
 
     </footer>

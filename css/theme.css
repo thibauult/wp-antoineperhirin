@@ -14218,13 +14218,7 @@ strong {
 
 #main {
   border: 1px solid black;
-  padding: 20px 30px;
-  font-size: 14pt;
-  font-weight: 200; }
-  #main h1 {
-    font-size: 36pt; }
-  #main h2 {
-    font-size: 18pt; }
+  padding: 20px 30px; }
   #main .the-breadcrumb {
     font-size: 12pt;
     font-weight: lighter;
@@ -14252,8 +14246,8 @@ strong {
     position: relative;
     text-align: center;
     background: black;
-    max-width: 220px;
-    margin: 20px; }
+    max-width: 33.333333%;
+    margin: 0; }
     #main.category .category-item img {
       height: auto; }
     #main.category .category-item h2 {
@@ -14291,7 +14285,6 @@ strong {
   #main.category footer a.link {
     width: 40px;
     height: 40px;
-    line-height: 40px;
     display: block;
     font-size: 20pt; }
   #main.category footer .page-numbers {
